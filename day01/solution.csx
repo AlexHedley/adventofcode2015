@@ -7,9 +7,11 @@ var directions = lines[0].Select(x => new string(x, 1)).ToArray();
 // directions.ToList().ForEach(Console.WriteLine);
 Console.WriteLine(string.Join(" ", directions));
 
+var counter = 0;
 var floor = 0;
 foreach(var direction in directions)
 {
+    counter++;
     switch (direction)
     {
         case "(": // UP
@@ -20,7 +22,8 @@ foreach(var direction in directions)
             break;
         default:
             break;
-    }  
+    }
+    if (floor == -1) Console.WriteLine($"Position: {counter}");
 }
 
 Console.WriteLine($"Floor: {floor}");
