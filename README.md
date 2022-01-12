@@ -14,14 +14,14 @@
 ```bash
   |   |                   1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2
   |   | 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5
-0 | 0 | * ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° | 2
+0 | 0 | * ■ ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° | 3
 ```
 
 Key: * Both | ■ One | ° None |
 
 | Silver ■ | Gold * |
 | - | - |
-| 0 | 1 |
+| 1 | 1 |
 
 <!-- https://github.com/marketplace/actions/aoc-badges -->
 <!-- ![](https://img.shields.io/badge/day%20📅-6-blue) -->
@@ -31,6 +31,7 @@ Key: * Both | ■ One | ° None |
 ## Solutions
 
 - [Day 1](day01/README.md)
+- [Day 2](day02/README.md)
 
 This repo contains my solutions to the [Advent of Code 2015](https://adventofcode.com/2015) using primarily [C#](https://docs.microsoft.com/en-us/dotnet/csharp/).
 
