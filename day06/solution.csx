@@ -41,12 +41,15 @@ void Part1()
         }
     }
 
-    Console.WriteLine($"Matrix Count #:{matrix.Length}");
-    var on = CountLights(matrix, 1);
-    Console.WriteLine($"Number of lights on #:{on}");
-    var off = CountLights(matrix, 0);
-    Console.WriteLine($"Number of lights off #:{off}");
-    Console.WriteLine($"Diff: {matrix.Length-on}");
+    // Console.WriteLine($"Matrix Count #:{matrix.Length}");
+    // var on = CountLights(matrix, 1);
+    // Console.WriteLine($"Number of lights on #:{on}");
+    // var off = CountLights(matrix, 0);
+    // Console.WriteLine($"Number of lights off #:{off}");
+    // Console.WriteLine($"Diff: {matrix.Length-on}");
+
+    int sum = matrix.Cast<int>().Sum();
+    Console.WriteLine($"Total #:{sum}");
 }
 
 Part1();
@@ -131,7 +134,7 @@ public int CountLights(int[,] matrix, int position)
 /// <param name="col"></param>
 public void TurnOn(ref int[,] matrix, int row, int col)
 {
-    matrix[row, col] = 1;
+    matrix[row, col] = matrix[row, col]+1;
 }
 
 /// <summary>
@@ -142,7 +145,9 @@ public void TurnOn(ref int[,] matrix, int row, int col)
 /// <param name="col"></param>
 public void TurnOff(ref int[,] matrix, int row, int col)
 {
-    matrix[row, col] = 0;
+    var current = matrix[row, col];
+    var updated = Math.Max(current - 1, 0);
+    matrix[row, col] = updated;
 }
 
 /// <summary>
@@ -153,8 +158,7 @@ public void TurnOff(ref int[,] matrix, int row, int col)
 /// <param name="col"></param>
 public void Toggle(ref int[,] matrix, int row, int col)
 {
-    var currentValue = matrix[row, col];
-    matrix[row, col] = (currentValue == 0) ? 1 : 0;
+    matrix[row, col] += 2;
 }
 
 /// <summary>
